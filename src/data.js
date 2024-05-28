@@ -12,7 +12,7 @@
 export const quizData = {
   currentQuestionIndex: 0,
   // the questions in the quiz
-  questions: [ //mustafa d//
+  questions: [ 
     {
       text: 'How is the Netherland national football team called?',
       answers: {
@@ -48,7 +48,7 @@ export const quizData = {
       correct: 'c',
       selected: null,
     },
-    {                       //Mahtab
+    {                       
       text: 'What is the main cause of wind?',
       answers: {
         a: ' Earth rotation',
@@ -71,7 +71,7 @@ export const quizData = {
       correct: 'c',
       selected: null,
     },
-    {                     //  Mustafa S
+    {                     
       text: 'What is the highest point in the Netherlands?',
       answers: {              
         a: 'Vaalserberg',
@@ -96,7 +96,7 @@ export const quizData = {
     },
     {      
       text: "Who is known as the 'King of Pop'?",  
-      answers: {                                     //Ali
+      answers: {                                     
         a: "Elvis Presley",
         b: "Michael Jackson",
         c: "Prince",
