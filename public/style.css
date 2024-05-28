@@ -15,6 +15,30 @@
 ul {
   list-style: none;
 }
+ul li{
+  margin: 10px 0;
+  color: black;
+  font-size: 1.4em;
+  font-weight: 700;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 1px;
+  background: #b1d6dd;
+  padding: 0.2em 1em;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  display: inline-block;
+  transition: 0.4s;
+  width: 350px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgb(133, 8, 8);
+  
+}
+
+ul li:hover{
+ text-decoration: underline #d63147;
+ background-color: transparent;
+ transform: scale(1.1);
+}
 
 
 /* Add this to your public/style.css */
