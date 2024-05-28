@@ -15,6 +15,7 @@
 ul {
   list-style: none;
 }
+
 ul li{
   margin: 10px 0;
   color: black;
@@ -38,4 +39,29 @@ ul li:hover{
  text-decoration: underline #d63147;
  background-color: transparent;
  transform: scale(1.1);
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+#player-name-input, #confirm-button, #start-quiz-button {
+  margin-bottom: 10px;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+button {
+  background-color: lightblue;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 50%;
 }
