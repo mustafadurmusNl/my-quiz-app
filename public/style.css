@@ -15,6 +15,7 @@
 ul {
   list-style: none;
 }
+
 ul li{
   margin: 10px 0;
   color: black;
@@ -40,8 +41,6 @@ ul li:hover{
  transform: scale(1.1);
 }
 
-
-/* Add this to your public/style.css */
 .centered {
   display: flex;
   justify-content: center;
@@ -66,4 +65,3 @@ button {
   border-radius: 10px;
   width: 50%;
 }
-/* ------------------ */
