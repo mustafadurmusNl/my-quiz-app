@@ -29,6 +29,7 @@ export const initQuestionPage = () => {
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 
+
   const answerButtons = document.querySelectorAll(ANSWERS_LIST_ID);
   answerButtons.forEach((button, index) => {
     button.addEventListener('click', () => {

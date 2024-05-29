@@ -65,3 +65,23 @@ button {
   border-radius: 10px;
   width: 50%;
 }
+.ending-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.ending-container p {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+#new-game-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+

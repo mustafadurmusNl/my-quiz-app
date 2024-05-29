@@ -1,5 +1,6 @@
 import { quizData } from './data.js';
 import { initQuestionPage } from './pages/questionPage.js';
+import{initEndingPage} from './pages/endingPage.js'
 
 
 export const processAnswer = (isCorrect) => {
