@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -27,7 +27,7 @@ ul {
   list-style: none;
 }
 
-ul li{
+ul li {
   margin: 10px 0;
   color: black;
   font-size: 1.4em;
@@ -43,18 +43,17 @@ ul li{
   width: 350px;
   cursor: pointer;
   box-shadow: 0 0 5px rgb(133, 8, 8);
-  
 }
 
-ul li:hover{
- text-decoration: underline #d63147;
- background-color: transparent;
- transform: scale(1.1);
+ul li:hover {
+  text-decoration: underline #d63147;
+  background-color: transparent;
+  transform: scale(1.1);
 }
 
-
-
-#player-name-input, #confirm-button, #start-quiz-button {
+#player-name-input,
+#confirm-button,
+#start-quiz-button {
   margin-bottom: 10px;
   padding: 15px;
   font-size: 16px;
@@ -64,7 +63,7 @@ ul li:hover{
 #player-name-input {
   border: 3px dashed rgb(250, 208, 44);
   padding: 8px 10px;
-  font-size: 16px; 
+  font-size: 16px;
 }
 
 #player-name-input:focus {
@@ -72,23 +71,33 @@ ul li:hover{
   outline: none;
 }
 button {
-  background-color: rgb(128,204,66);
+  background-color: rgb(128, 204, 66);
   cursor: pointer;
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 10px;
   width: 50%;
   border: none;
+  cursor: not-allowed;
 }
-#myVideo{
-  position: fixed;       
-    width: 100vw;   
-    z-index: -1; 
-    object-fit:fill; 
-    
+#confirm-button {
+  background-color: rgb(194, 193, 193);
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 50%;
+  border: none;
+  cursor: not-allowed;
 }
-  
-#name-prompt{
+#myVideo {
+  position: fixed;
+  width: 100vw;
+  z-index: -1;
+  object-fit: fill;
+}
+
+#name-prompt {
   padding: 20px;
 }
 
@@ -97,18 +106,28 @@ button {
 }
 
 .green-text {
-  color: rgb(128,204,66);
+  color: rgb(128, 204, 66);
+}
+
+.button-disabled {
+  background-color: rgb(232, 232, 232);
+  cursor: not-allowed;
+}
+
+.button-enabled {
+  background-color: green;
+  cursor: pointer;
 }
 /* response */
 @media (max-height: 500px) {
   #myVideo {
-      height: 70vw;  
+    height: 70vw;
   }
 }
 /* Medium */
 @media (max-width: 768px) {
   .centered {
-    padding: 20px; 
+    padding: 20px;
   }
 
   ul li {
@@ -117,9 +136,9 @@ button {
   }
 
   button {
-    width: 70%; 
+    width: 70%;
   }
-  #name-prompt{
+  #name-prompt {
     padding: 20px;
   }
 }
@@ -128,7 +147,7 @@ button {
 @media (max-width: 480px) {
   .centered {
     height: auto;
-    min-height: 100vh; 
+    min-height: 100vh;
     padding: 20px;
     box-sizing: border-box;
   }
@@ -136,18 +155,20 @@ button {
   ul li {
     font-size: 1em;
     width: 100%;
-    padding: 10px; 
+    padding: 10px;
   }
 
   button {
     width: 100%;
   }
 
-  #player-name-input, #confirm-button, #start-quiz-button {
+  #player-name-input,
+  #confirm-button,
+  #start-quiz-button {
     padding: 12px;
     font-size: 14px;
   }
-  #name-prompt{
+  #name-prompt {
     padding: 20px;
   }
 }
