@@ -7,8 +7,14 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { processAnswer } from '../quiz.js';
+import { initEndingPage } from './endingPage.js';
 
 export const initQuestionPage = () => {
+  const currentQuestionIndex = quizData.currentQuestionIndex;
+  if (currentQuestionIndex >= quizData.questions.length) {
+      initEndingPage();
+      return;
+  }
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
