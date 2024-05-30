@@ -5,7 +5,6 @@ import { initQuestionPage } from './questionPage.js';
 export const initWelcomePage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
-  
 
   const welcomeElement = createWelcomeElement();
   userInterface.appendChild(welcomeElement);
