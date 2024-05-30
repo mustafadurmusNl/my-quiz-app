@@ -1,9 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  color: black;
 }
 
 .scrollable {
@@ -15,7 +26,6 @@
 ul {
   list-style: none;
 }
-
 ul li{
   margin: 10px 0;
   color: black;
@@ -32,13 +42,124 @@ ul li{
   width: 350px;
   cursor: pointer;
   box-shadow: 0 0 5px rgb(133, 8, 8);
-  
 }
 
-ul li:hover{
- text-decoration: underline #d63147;
- background-color: transparent;
- transform: scale(1.1);
+ul li:hover {
+  text-decoration: underline #d63147;
+  background-color: transparent;
+  transform: scale(1.1);
+}
+
+#player-name-input,
+#confirm-button,
+#start-quiz-button {
+  margin-bottom: 10px;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+}
+#player-name-input {
+  border: 3px dashed rgb(250, 208, 44);
+  padding: 8px 10px;
+  font-size: 16px;
+}
+
+#player-name-input:focus {
+  border: 3px dashed rgb(250, 208, 44);
+  outline: none;
+}
+button {
+  background-color: rgb(128, 204, 66);
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 50%;
+  border: none;
+  cursor: not-allowed;
+}
+#confirm-button:disabled {
+  background-color: rgb(194, 193, 193);
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 50%;
+  border: none;
+}
+#myVideo {
+  position: fixed;
+  width: 100vw;
+  z-index: -1;
+  object-fit: fill;
+}
+
+#name-prompt {
+  padding: 20px;
+}
+
+.welcome-effect {
+  transition: color 1s ease;
+}
+
+.green-text {
+  color: rgb(128, 204, 66);
+}
+
+/* response */
+@media (max-height: 500px) {
+  #myVideo {
+    height: 70vw;
+  }
+}
+/* Medium */
+@media (max-width: 768px) {
+  .centered {
+    padding: 20px;
+  }
+
+  ul li {
+    font-size: 1.2em;
+    width: 80%;
+  }
+
+  button {
+    width: 70%;
+  }
+  #name-prompt {
+    padding: 20px;
+  }
+}
+
+/* Small */
+@media (max-width: 480px) {
+  .centered {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  ul li {
+    font-size: 1em;
+    width: 100%;
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  #player-name-input,
+  #confirm-button,
+  #start-quiz-button {
+    padding: 12px;
+    font-size: 14px;
+  }
+  #name-prompt {
+    padding: 20px;
+  }
 }
 
 .centered {
@@ -76,4 +197,35 @@ border-radius: 20px;
 #next-question-button{
 
 border-radius: 20px;
+}
+.ending-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.ending-page p {
+  width: 100%;
+  padding: 20px;
+  font-size: 1.5em;
+  background-color: black;
+  color:yellow;
+  margin-bottom: 30px;
+}
+
+#new-game-button {
+  padding: 20px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+.cat-image {
+  width: 200px;
+  height: auto;
+  margin-top: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -6,10 +6,17 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+import { processAnswer } from '../quiz.js';
+import { initEndingPage } from './endingPage.js';
 
 let questionAnswered=false;
 let score=0;
 export const initQuestionPage = () => {
+  const currentQuestionIndex = quizData.currentQuestionIndex;
+  if (currentQuestionIndex >= quizData.questions.length) {
+      initEndingPage();
+      return;
+  }
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
@@ -30,6 +37,22 @@ export const initQuestionPage = () => {
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
+
+
+  const answerButtons = document.querySelectorAll(ANSWERS_LIST_ID);
+  answerButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      const isCorrect = checkAnswer(index);
+      processAnswer(isCorrect);
+    });
+  });
+
+  const checkAnswer = (index) => {
+    const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+    const selectedAnswer = Object.keys(currentQuestion.answers)[index];
+    correctAnswer = currentQuestion.correct;
+    return selectedAnswer === correctAnswer;
+  };
     document
     .getElementById(SKIP_QUESTION_BUTTON_ID)
     .addEventListener('click', skipQuestion);
