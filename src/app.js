@@ -1,3 +1,4 @@
+import { ANSWERS_LIST_ID } from './constants.js';
 import { quizData } from './data.js';
 import { initWelcomePage } from './pages/welcomePage.js';
 
