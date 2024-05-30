@@ -13,3 +13,7 @@ export const NEW_GAME_BUTTON_ID='new-game-button'
 export const SAD_CAT_IMAGE='https://media.tenor.com/r_Toz7xWIGgAAAAM/cat-cats.gif'
 export const HAPPY_CAT_IMAGE='https://media.tenor.com/cS2O4bhrjLkAAAAM/happy-pleased.gif'
 export const SUPER_HAPPY_CAT_IMAGE='https://media.tenor.com/1IBMYwFj8gYAAAAM/happy-cat-excited-cat.gif'
+export const CONFIRM_BUTTON_ID = 'confirm-button';
+export const INPUT_NAME_ID = 'player-name-input';
+export const INPUT_P_TAG_ID = 'name-prompt';
+export const WELCOME_MESSAGE_ID = 'welcome-message';
