@@ -12,9 +12,6 @@ export const initWelcomePage = () => {
   document
     .getElementById(START_QUIZ_BUTTON_ID)
     .addEventListener('click', startQuiz);
-
-    // we need add text in the input and when clicked confirm button can see user name and can start the quiz
-    // Also we need confirm btn and player name and welcome message 
     const confirmButton = document.getElementById(CONFIRM_BUTTON_ID);
     const startButton = document.getElementById(START_QUIZ_BUTTON_ID);
     const nameInput = document.getElementById(INPUT_NAME_ID);
