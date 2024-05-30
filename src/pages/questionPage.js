@@ -77,6 +77,7 @@ const skipQuestion = () => {
 
   questionAnswered = true;
   nextButtonSwitcher();
+  skipButtonSwitcher()
 };
 
 const selectAnswer = (key, answerElement) => {
@@ -84,16 +85,26 @@ const selectAnswer = (key, answerElement) => {
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
-  const allAnswers = answersListElement.getElementsByTagName('li');//oranje,blues,lions,heros
+  const allAnswers = answersListElement.getElementsByTagName('li');
 
   if (key === currentQuestion.correct) {
     
+
     answerElement.style.backgroundColor = 'green';
     score++;
+ displayHappyCat()
   } else {
-   
     answerElement.style.backgroundColor = 'red';
-  
+    displayUnhappyCat()
+    setTimeout(() => {
+      for (let i = 0; i < allAnswers.length; i++) {
+        const answerKey = allAnswers[i].getAttribute('data-key');
+        if (answerKey === currentQuestion.correct) {
+          allAnswers[i].style.backgroundColor = 'blue';
+          break;
+        }
+      }
+    }, 500);
   }
 
   questionAnswered = true;
@@ -112,4 +123,26 @@ const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
   initQuestionPage();
+};
+const displayHappyCat = () => {
+  const happyCatImg = document.createElement('img');
+  happyCatImg.src = 'https://media.tenor.com/cS2O4bhrjLkAAAAM/happy-pleased.gif'; 
+  happyCatImg.alt = 'Happy Cat';
+  happyCatImg.classList.add('show-happy-cat');
+  document.body.appendChild(happyCatImg);
+
+  setTimeout(() => {
+    happyCatImg.remove();
+  }, 2000);
+};
+const displayUnhappyCat = () => {
+  const unhappyCatImg = document.createElement('img');
+  unhappyCatImg.src = 'https://media.tenor.com/xCO75gIMoCoAAAAM/catsad-sad.gif'; 
+  unhappyCatImg.alt = 'Unhappy Cat';
+  unhappyCatImg.classList.add('show-unhappy-cat');
+  document.body.appendChild(unhappyCatImg);
+
+  setTimeout(() => {
+    unhappyCatImg.remove();
+  }, 2000);
 };
