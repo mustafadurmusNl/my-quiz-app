@@ -1,4 +1,4 @@
-import { USER_INTERFACE_ID, START_QUIZ_BUTTON_ID , CONFIRM_BUTTON ,INPUT_NAME , INPUT_P_TAG , WELCOME_MESSAGE  } from '../constants.js';
+import { USER_INTERFACE_ID, START_QUIZ_BUTTON_ID , CONFIRM_BUTTON_ID ,INPUT_NAME_ID , INPUT_P_TAG_ID , WELCOME_MESSAGE_ID  } from '../constants.js';
 import { createWelcomeElement } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
 
@@ -16,11 +16,11 @@ export const initWelcomePage = () => {
 
     // we need add text in the input and when clicked confirm button can see user name and can start the quiz
     // Also we need confirm btn and player name and welcome message 
-    const confirmButton = document.getElementById(CONFIRM_BUTTON);
+    const confirmButton = document.getElementById(CONFIRM_BUTTON_ID);
     const startButton = document.getElementById(START_QUIZ_BUTTON_ID);
-    const nameInput = document.getElementById(INPUT_NAME);
-    const namePrompt = document.getElementById(INPUT_P_TAG);
-    const welcomeMessage = document.getElementById(WELCOME_MESSAGE);
+    const nameInput = document.getElementById(INPUT_NAME_ID);
+    const namePrompt = document.getElementById(INPUT_P_TAG_ID);
+    const welcomeMessage = document.getElementById(WELCOME_MESSAGE_ID);
   
  
   function updateButtonState() {
