@@ -20,6 +20,16 @@ export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
+  const scoreContainer = document.createElement('div');
+  scoreContainer.classList.add('score-container');
+
+  const scoreElement = document.createElement('div');
+  scoreElement.classList.add('score');
+  scoreElement.textContent = `Your Score is: ${score}`;
+  // userInterface.appendChild(scoreElement);
+  scoreContainer.appendChild(scoreElement);
+  userInterface.appendChild(scoreContainer);
+
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
   const questionElement = createQuestionElement(currentQuestion.text);
