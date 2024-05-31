@@ -18,7 +18,7 @@ body {
   height: 100vh;
   flex-direction: column;
   position: fixed;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -33,7 +33,11 @@ body {
 
 ul {
   list-style: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
+
 ul li{
   margin: 10px 0;
   color: black;
@@ -47,7 +51,7 @@ ul li{
   border-radius: 20px;
   display: inline-block;
   transition: 0.4s;
-  width: 350px;
+  width: 400px;
   cursor: pointer;
   box-shadow: 0 0 5px rgb(133, 8, 8);
 }
@@ -59,6 +63,25 @@ ul li:hover {
   color: #b1d6dd;
   text-decoration: none;
   transform: scale(1.1);
+}
+
+
+.score-container {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 3px;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgb(133, 8, 8);
+}
+
+.score {
+  font-size: 18px;
+  font-weight: 800;
+  color: #333;
+  text-decoration: double underline #d6d031;
+ 
 }
  #player-name-input,
   #confirm-button {
