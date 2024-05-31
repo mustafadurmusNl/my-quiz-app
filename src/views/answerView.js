@@ -3,9 +3,8 @@
  * @returns {Element}
  */
 export const createAnswerElement = (key, answerText) => {
-  const element = document.createElement('li');
-  element.innerHTML = String.raw`
-    ${key}: ${answerText};
-  `;
-  return element;
+  const li = document.createElement('li');
+  li.setAttribute('data-key', key); // Set the data-key attribute to the key parameter
+  li.textContent = answerText;
+  return li;
 };

@@ -17,3 +17,4 @@ export const CONFIRM_BUTTON_ID = 'confirm-button';
 export const INPUT_NAME_ID = 'player-name-input';
 export const INPUT_P_TAG_ID = 'name-prompt';
 export const WELCOME_MESSAGE_ID = 'welcome-message';
+export const SKIP_QUESTION_BUTTON_ID='skip-question-button'
