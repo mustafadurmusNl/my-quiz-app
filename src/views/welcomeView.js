@@ -14,7 +14,6 @@ export const createWelcomeElement = () => {
   element.style.height = '90vh';
 
   element.innerHTML = String.raw`
-<img id='image-welcomePage' src="./public/images-videos/bg1.jpg"></img>
   <h1 id="welcome-message"  >Welcome</h1>
   <p id="name-prompt" >What name do you like to play?</p>
   <input type="text" id="player-name-input" style="text-align: left; "  placeholder="Enter your name" />

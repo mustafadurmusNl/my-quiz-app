@@ -3,6 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-image: url('../public/images-videos/bg1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  
+}
 .centered {
   display: flex;
   justify-content: center;
@@ -14,7 +22,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: black;
+  color: #b1d6dd;
 }
 
 .scrollable {
@@ -47,6 +55,9 @@ ul li{
 ul li:hover {
   text-decoration: underline #d63147;
   background-color: transparent;
+  background-color: rgb(142,17,73);
+  color: #b1d6dd;
+  text-decoration: none;
   transform: scale(1.1);
 }
  #player-name-input,
@@ -72,7 +83,6 @@ ul li:hover {
 button {
   background-color: rgb(128, 204, 66);
   cursor: pointer;
-
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 10px;
@@ -98,16 +108,6 @@ button {
   border: none;
 }
 
-#image-welcomePage{
-  position: fixed; 
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%);
-  width: 100vw; 
-  height: 100vh; 
-  object-fit: cover; 
-  z-index: -1; 
-}
 #name-prompt {
   padding: 20px;
   font-size: 25px;
