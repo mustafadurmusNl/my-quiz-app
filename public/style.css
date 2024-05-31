@@ -49,35 +49,36 @@ ul li:hover {
   background-color: transparent;
   transform: scale(1.1);
 }
-
-#player-name-input,
-#confirm-button,
-#start-quiz-button {
+ #player-name-input,
+  #confirm-button {
   margin-bottom: 10px;
   padding: 15px;
   font-size: 16px;
   border-radius: 10px;
-  border: none;
-}
+  border: none; 
+} 
 #player-name-input {
-  border: 3px dashed rgb(250, 208, 44);
+  border: 3px solid rgb(142,17,73);
   padding: 8px 10px;
   font-size: 16px;
+  text-align: left;
 }
 
 #player-name-input:focus {
-  border: 3px dashed rgb(250, 208, 44);
+  border: 3px solid rgb(142,17,73);
   outline: none;
+  text-align: left;
 }
 button {
   background-color: rgb(128, 204, 66);
   cursor: pointer;
+
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 10px;
   width: 50%;
   border: none;
-  cursor: not-allowed;
+
 }
 #confirm-button:disabled {
   background-color: rgb(194, 193, 193);
@@ -88,31 +89,48 @@ button {
   width: 50%;
   border: none;
 }
-#myVideo {
-  position: fixed;
-  width: 100vw;
-  z-index: -1;
-  object-fit: fill;
+#confirm-button.button-enabled{
+  background-color: rgb(142,17,73);
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 50%;
+  border: none;
 }
 
+#image-welcomePage{
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  width: 100vw; 
+  height: 100vh; 
+  object-fit: cover; 
+  z-index: -1; 
+}
 #name-prompt {
   padding: 20px;
+  font-size: 25px;
+  color: rgb(180,236,254);
 }
 
 .welcome-effect {
   transition: color 1s ease;
+  color:  darkblue;
+}
+#welcome-message{
+  font-size: 50px;
+  color: rgb(186, 231, 253);
+}
+.start-quiz-button{
+  background-color: rgb(207, 79, 137);
 }
 
 .green-text {
-  color: rgb(128, 204, 66);
+  color: rgb(221, 113, 162) !important; 
 }
 
 /* response */
-@media (max-height: 500px) {
-  #myVideo {
-    height: 70vw;
-  }
-}
 /* Medium */
 @media (max-width: 768px) {
   .centered {
@@ -129,6 +147,15 @@ button {
   }
   #name-prompt {
     padding: 20px;
+    font-size: 24px;
+  }
+  #welcome-message {
+    font-size: 40px; 
+  }
+  .start-quiz-button {
+    font-size: 16px; 
+    padding: 10px 20px;
+    width: 70%; 
   }
 }
 
@@ -151,9 +178,16 @@ button {
     width: 100%;
   }
 
+  #welcome-message {
+    font-size: 30px;
+  }
+  .start-quiz-button {
+    font-size: 14px;
+    padding: 8px 16px;
+    width: 100%;
+  }
   #player-name-input,
-  #confirm-button,
-  #start-quiz-button {
+  #confirm-button {
     padding: 12px;
     font-size: 14px;
   }
@@ -170,7 +204,7 @@ button {
   flex-direction: column;
 }
 
-#player-name-input, #confirm-button, #start-quiz-button {
+#player-name-input, #confirm-button {
   margin-bottom: 10px;
   padding: 15px;
   font-size: 16px;

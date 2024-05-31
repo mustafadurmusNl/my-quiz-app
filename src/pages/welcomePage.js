@@ -19,46 +19,45 @@ export const initWelcomePage = () => {
     const welcomeMessage = document.getElementById(WELCOME_MESSAGE_ID);
   
  
-  function updateButtonState() {
-    nameInput.value = nameInput.value.trimStart(); 
-    const name = nameInput.value;
-    if (name) {
-      confirmButton.classList.remove('button-disabled');
-      confirmButton.classList.add('button-enabled');
-      confirmButton.disabled = false;
-      confirmButton.style.backgroundColor = 'rgb(128,204,66)';
-      confirmButton.style.cursor = 'pointer';
-    } else {
-      confirmButton.classList.add('button-disabled');
-      confirmButton.classList.remove('button-enabled');
-      confirmButton.disabled = true;
-      confirmButton.style.backgroundColor = 'rgb(232, 232, 232)'; 
-      confirmButton.style.cursor = 'not-allowed';
+    function updateButtonState() {
+      nameInput.value = nameInput.value.trimStart(); 
+      const name = nameInput.value;
+      if (name) {
+        confirmButton.classList.remove('button-disabled');
+        confirmButton.classList.add('button-enabled');
+        confirmButton.disabled = false;
+        confirmButton.style.backgroundColor = 'rgb(221, 113, 162)';
+        confirmButton.style.cursor = 'pointer';
+      } else {
+        confirmButton.classList.add('button-disabled');
+        confirmButton.classList.remove('button-enabled');
+        confirmButton.disabled = true;
+        confirmButton.style.backgroundColor = 'rgb(232, 232, 232)'; 
+        confirmButton.style.cursor = 'not-allowed';
+      }
     }
-  }
+  
+    updateButtonState();
+    nameInput.addEventListener('input', updateButtonState);
 
-  updateButtonState();
-
-  nameInput.addEventListener('input', updateButtonState);
-
-  confirmButton.addEventListener('click', () => {
-    const playerName = nameInput.value.trim();
-    if (playerName) {
-      welcomeMessage.innerText = `Welcome , ${playerName}`;
-      welcomeMessage.classList.add('welcome-effect');
-      welcomeMessage.style.padding = '20px';
-      setTimeout(() => {
-        welcomeMessage.style.opacity = 1;
-        welcomeMessage.classList.add('green-text');
-      }, 100);
-      confirmButton.style.display = 'none';
-      startButton.style.display = 'block';
-      nameInput.style.display = 'none';
-      namePrompt.style.display = 'none';
-    }
-  });
-
-  startButton.addEventListener('click', startQuiz);
+    confirmButton.addEventListener('click', () => {
+      const playerName = nameInput.value.trim();
+      if (playerName) {
+        welcomeMessage.innerText = `Welcome , ${playerName}`;
+        welcomeMessage.classList.add('welcome-effect');
+        welcomeMessage.style.padding = '20px';
+        setTimeout(() => {
+          welcomeMessage.style.opacity = 1;
+          welcomeMessage.classList.add('green-text');
+        }, 100);
+        confirmButton.style.display = 'none';
+        startButton.style.display = 'block';
+        nameInput.style.display = 'none';
+        namePrompt.style.display = 'none';
+      }
+    });
+  
+    startButton.addEventListener('click', startQuiz);
 };
 const startQuiz = () => {
   console.log('Starting the game...');
