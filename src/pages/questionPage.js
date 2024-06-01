@@ -10,7 +10,7 @@ import { processAnswer } from '../quiz.js';
 import { initEndingPage } from './endingPage.js';
 
 let questionAnswered=false;
-let score=0;
+ export let score=0;
 export const initQuestionPage = () => {
   const currentQuestionIndex = quizData.currentQuestionIndex;
   if (currentQuestionIndex >= quizData.questions.length) {
@@ -98,8 +98,6 @@ const selectAnswer = (key, answerElement) => {
   const allAnswers = answersListElement.getElementsByTagName('li');
 
   if (key === currentQuestion.correct) {
-    
-
     answerElement.style.backgroundColor = 'green';
     score++;
  displayHappyCat()
@@ -110,7 +108,7 @@ const selectAnswer = (key, answerElement) => {
       for (let i = 0; i < allAnswers.length; i++) {
         const answerKey = allAnswers[i].getAttribute('data-key');
         if (answerKey === currentQuestion.correct) {
-          allAnswers[i].style.backgroundColor = 'blue';
+          allAnswers[i].style.backgroundColor = 'green';
           break;
         }
       }
@@ -122,17 +120,28 @@ const selectAnswer = (key, answerElement) => {
   nextButtonSwitcher();
   
 };
+
+const nextQuestion = () => {
+// Remove happy cat image if it exists
+const happyCatImg = document.querySelector('.show-happy-cat');
+if (happyCatImg) {
+  happyCatImg.remove();
+}
+
+// Remove unhappy cat image if it exists
+const unhappyCatImg = document.querySelector('.show-unhappy-cat');
+if (unhappyCatImg) {
+  unhappyCatImg.remove();
+}
+  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+  initQuestionPage();
+};
 const nextButtonSwitcher = () => {
   document.getElementById(NEXT_QUESTION_BUTTON_ID).disabled = !questionAnswered;
 };
 const skipButtonSwitcher = () => {
   const skipButton = document.getElementById(SKIP_QUESTION_BUTTON_ID);
   skipButton.disabled = questionAnswered;
-};
-const nextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-
-  initQuestionPage();
 };
 const displayHappyCat = () => {
   const happyCatImg = document.createElement('img');
@@ -141,9 +150,7 @@ const displayHappyCat = () => {
   happyCatImg.classList.add('show-happy-cat');
   document.body.appendChild(happyCatImg);
 
-  setTimeout(() => {
-    happyCatImg.remove();
-  }, 2000);
+ 
 };
 const displayUnhappyCat = () => {
   const unhappyCatImg = document.createElement('img');
@@ -152,7 +159,4 @@ const displayUnhappyCat = () => {
   unhappyCatImg.classList.add('show-unhappy-cat');
   document.body.appendChild(unhappyCatImg);
 
-  setTimeout(() => {
-    unhappyCatImg.remove();
-  }, 2000);
 };

@@ -245,7 +245,7 @@ button {
 }
 
 .skipped-correct { 
-  background-color: gray;
+  background-color: blue;
 }
  #skip-question-button{
   margin: 20px;
@@ -257,7 +257,7 @@ border-radius: 20px;
 }
 .ending-container {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
 .ending-page p {
@@ -265,8 +265,9 @@ border-radius: 20px;
   padding: 20px;
   font-size: 1.5em;
   background-color: black;
-  color:yellow;
+  color:white;
   margin-bottom: 30px;
+  border-radius: 20px;
 }
 
 #new-game-button {
