@@ -245,7 +245,7 @@ button {
 }
 
 .skipped-correct { 
-  background-color: green;
+  background-color: blue;
 }
  #skip-question-button{
   margin: 20px;
