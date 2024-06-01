@@ -9,7 +9,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
-  
 }
 .centered {
   display: flex;
@@ -65,7 +64,6 @@ ul li:hover {
   transform: scale(1.1);
 }
 
-
 .score-container {
   position: fixed;
   top: 80px;
@@ -81,16 +79,17 @@ ul li:hover {
   font-weight: 800;
   color: #333;
   text-decoration: double underline #d6d031;
- 
 }
- #player-name-input,
-  #confirm-button {
+#player-name-input,
+#confirm-button,
+#continue-button {
   margin-bottom: 10px;
   padding: 15px;
   font-size: 16px;
   border-radius: 10px;
   border: none; 
 } 
+
 #player-name-input {
   border: 3px solid rgb(142,17,73);
   padding: 8px 10px;
@@ -111,9 +110,9 @@ button {
   border-radius: 10px;
   width: 50%;
   border: none;
-
 }
-#confirm-button:disabled {
+#confirm-button:disabled,
+#continue-button:disabled {
   background-color: rgb(194, 193, 193);
   cursor: pointer;
   padding: 10px 20px;
@@ -122,7 +121,8 @@ button {
   width: 50%;
   border: none;
 }
-#confirm-button.button-enabled{
+#confirm-button.button-enabled,
+#continue-button:enabled{
   background-color: rgb(142,17,73);
   padding: 10px 20px;
   font-size: 16px;
@@ -210,10 +210,12 @@ button {
     width: 100%;
   }
   #player-name-input,
-  #confirm-button {
+  #confirm-button,
+  #continue-button {
     padding: 12px;
     font-size: 14px;
   }
+
   #name-prompt {
     padding: 20px;
   }
@@ -227,7 +229,9 @@ button {
   flex-direction: column;
 }
 
-#player-name-input, #confirm-button {
+#player-name-input,
+#confirm-button,
+#continue-button {
   margin-bottom: 10px;
   padding: 15px;
   font-size: 16px;
@@ -252,7 +256,6 @@ button {
 border-radius: 20px;
 }
 #next-question-button{
-
 border-radius: 20px;
 }
 .ending-container {
@@ -297,7 +300,6 @@ border-radius: 20px;
   transform: translateX(-50%);
   display: none; /* Initially hidden */
   display: block;
-  
 }
 .show-unhappy-cat {
   width: 200px; /* Adjust the size as needed */
@@ -308,5 +310,4 @@ border-radius: 20px;
   transform: translateX(-50%);
   display: none; /* Initially hidden */
   display: block;
-  
 }
