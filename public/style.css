@@ -17,11 +17,12 @@ body {
   height: 100vh;
   flex-direction: column;
   position: fixed;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   color: #b1d6dd;
+  border: 3px solid;
 }
 
 .scrollable {
@@ -38,7 +39,8 @@ ul {
 }
 
 ul li{
-  margin: 10px 0;
+  margin: 5px 5px;
+  text-align: center;
   color: black;
   font-size: 1.4em;
   font-weight: 700;
@@ -47,12 +49,18 @@ ul li{
   background: #b1d6dd;
   padding: 0.2em 1em;
   border: 2px solid transparent;
-  border-radius: 20px;
-  display: inline-block;
+  border-radius: 10px;
+  /* display: inline-block; */
   transition: 0.4s;
   width: 400px;
   cursor: pointer;
   box-shadow: 0 0 5px rgb(133, 8, 8);
+  
+}
+h1{
+  color: rgb(166, 26, 191);
+  margin: 30px;
+  border: 2px solid white;
 }
 
 ul li:hover {
