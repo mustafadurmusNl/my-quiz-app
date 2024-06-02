@@ -14,6 +14,6 @@
 export const createAnswerElement = (key, answerText) => {
   const li = document.createElement('li');
   li.setAttribute('data-key', key); // Set the data-key attribute to the key parameter
-  li.textContent = answerText;
+  li.textContent = `${key.toUpperCase()}) ${answerText.toUpperCase()}`
   return li;
 };
