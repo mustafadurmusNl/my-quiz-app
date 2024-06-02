@@ -54,7 +54,8 @@ ul li{
   box-shadow: 0 0 5px rgb(133, 8, 8);
   
 }
-h1{
+.question-title{
+  padding: 10px;
   color: rgb(166, 26, 191);
   margin: 30px;
   border: 2px solid white;
