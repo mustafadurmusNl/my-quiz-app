@@ -38,10 +38,18 @@ export const initQuestionPage = (index) => {
   scoreContainer.appendChild(scoreElement);
   userInterface.appendChild(scoreContainer);
 
+
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
   const questionElement = createQuestionElement(currentQuestion.text);
   userInterface.appendChild(questionElement);
+  const indexContainer = document.createElement('div');
+ indexContainer.classList.add('indexContainer')
+const questionElements = document.createElement("div")
+questionElements.classList.add('index')
+questionElements.textContent = `Your Question Number is: ${quizData.currentQuestionIndex + 1}`;
+indexContainer.appendChild(questionElements)
+userInterface.appendChild(indexContainer)
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
   answersListElement.innerHTML = ''; // Clear previous answers

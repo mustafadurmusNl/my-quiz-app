@@ -21,8 +21,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #b1d6dd;
-  border: 3px solid;
 }
 
 .scrollable {
@@ -50,7 +48,6 @@ ul li{
   padding: 0.2em 1em;
   border: 2px solid transparent;
   border-radius: 10px;
-  /* display: inline-block; */
   transition: 0.4s;
   width: 400px;
   cursor: pointer;
@@ -74,11 +71,13 @@ ul li:hover {
 
 .score-container {
   position: fixed;
-  top: 80px;
-  right: 20px;
+  bottom: 40px;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 3px;
+  width: 30%;
   border-radius: 15px;
+  align-items: center;
+  text-align: center;
   box-shadow: 0 0 5px rgb(133, 8, 8);
 }
 
@@ -88,6 +87,20 @@ ul li:hover {
   color: #333;
   text-decoration: double underline #d6d031;
 }
+
+.indexContainer{
+  margin: 20px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 800;
+  width: 30%;
+  color: #333;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+/* .index{
+  background-color: purple;
+} */
 #player-name-input,
 #confirm-button,
 #continue-button {
