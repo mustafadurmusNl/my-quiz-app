@@ -47,7 +47,7 @@ export const initQuestionPage = (index) => {
  indexContainer.classList.add('indexContainer')
 const questionElements = document.createElement("div")
 questionElements.classList.add('index')
-questionElements.textContent = `Your Question Number is: ${quizData.currentQuestionIndex + 1}`;
+questionElements.textContent = ` Question : ${quizData.currentQuestionIndex + 1}`;
 indexContainer.appendChild(questionElements)
 userInterface.appendChild(indexContainer)
 
