@@ -17,11 +17,10 @@ body {
   height: 100vh;
   flex-direction: column;
   position: fixed;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #b1d6dd;
 }
 
 .scrollable {
@@ -38,7 +37,8 @@ ul {
 }
 
 ul li{
-  margin: 10px 0;
+  margin: 5px 5px;
+  text-align: center;
   color: black;
   font-size: 1.4em;
   font-weight: 700;
@@ -47,12 +47,18 @@ ul li{
   background: #b1d6dd;
   padding: 0.2em 1em;
   border: 2px solid transparent;
-  border-radius: 20px;
-  display: inline-block;
+  border-radius: 10px;
   transition: 0.4s;
   width: 400px;
   cursor: pointer;
   box-shadow: 0 0 5px rgb(133, 8, 8);
+  
+}
+.question-title{
+  padding: 10px;
+  color: rgb(166, 26, 191);
+  margin: 30px;
+  border: 2px solid white;
 }
 
 ul li:hover {
@@ -66,11 +72,13 @@ ul li:hover {
 
 .score-container {
   position: fixed;
-  top: 80px;
-  right: 20px;
+  bottom: 40px;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 3px;
+  width: 30%;
   border-radius: 15px;
+  align-items: center;
+  text-align: center;
   box-shadow: 0 0 5px rgb(133, 8, 8);
 }
 
@@ -80,6 +88,20 @@ ul li:hover {
   color: #333;
   text-decoration: double underline #d6d031;
 }
+
+.indexContainer{
+  margin: 20px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 800;
+  width: 30%;
+  color: #333;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+/* .index{
+  background-color: purple;
+} */
 #player-name-input,
 #confirm-button,
 #continue-button {
