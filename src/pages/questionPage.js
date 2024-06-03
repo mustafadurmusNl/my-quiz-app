@@ -27,17 +27,24 @@ export const initQuestionPage = index => {
     const scoreContainer = document.createElement('div');
     scoreContainer.classList.add('score-container');
 
-  const scoreElement = document.createElement('div');
-  scoreElement.classList.add('score');
-  scoreElement.textContent = `Your Score is: ${score}`;
-  scoreContainer.appendChild(scoreElement);
-  userInterface.appendChild(scoreContainer);
+    const scoreElement = document.createElement('div');
+    scoreElement.classList.add('score');
+    scoreElement.textContent = `Your Score is: ${score}`;
+    scoreContainer.appendChild(scoreElement);
+    userInterface.appendChild(scoreContainer);
 
 
-    const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
   const questionElement = createQuestionElement(currentQuestion.text);
   userInterface.appendChild(questionElement);
+  const indexContainer = document.createElement('div');
+ indexContainer.classList.add('indexContainer')
+const questionElements = document.createElement("div")
+questionElements.classList.add('index')
+questionElements.textContent = ` Question : ${quizData.currentQuestionIndex + 1}`;
+indexContainer.appendChild(questionElements)
+userInterface.appendChild(indexContainer)
 
     const answersListElement = document.getElementById(ANSWERS_LIST_ID);
     answersListElement.innerHTML = ''; // Clear previous answers
