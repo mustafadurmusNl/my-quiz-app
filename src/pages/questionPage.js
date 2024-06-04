@@ -2,7 +2,6 @@ import { ANSWERS_LIST_ID, NEXT_QUESTION_BUTTON_ID, USER_INTERFACE_ID, SKIP_QUEST
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
-import { processAnswer } from '../quiz.js';
 import { initEndingPage } from './endingPage.js';
 
 let questionAnswered = false;
@@ -23,38 +22,29 @@ export const initQuestionPage = index => {
 
     const userInterface = document.getElementById(USER_INTERFACE_ID);
     userInterface.innerHTML = '';
+ 
 
-    const scoreContainer = document.createElement('div');
-    scoreContainer.classList.add('score-container');
+    
 
-    const scoreElement = document.createElement('div');
-    scoreElement.classList.add('score');
-    scoreElement.textContent = `Your Score is: ${score}`;
-    scoreContainer.appendChild(scoreElement);
+    const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+
+    const indexContainer = createIndexContainer();
+    userInterface.appendChild(indexContainer);
+
+    const questionElement = createQuestionElement(currentQuestion.text);
+    userInterface.appendChild(questionElement);
+
+    const scoreContainer = createScoreContainer();
     userInterface.appendChild(scoreContainer);
-
-
-  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-
-  const questionElement = createQuestionElement(currentQuestion.text);
-  userInterface.appendChild(questionElement);
-  const indexContainer = document.createElement('div');
- indexContainer.classList.add('indexContainer')
-const questionElements = document.createElement("div")
-questionElements.classList.add('index')
-questionElements.textContent = ` Question : ${quizData.currentQuestionIndex + 1}`;
-indexContainer.appendChild(questionElements)
-userInterface.appendChild(indexContainer)
-
     const answersListElement = document.getElementById(ANSWERS_LIST_ID);
     answersListElement.innerHTML = ''; // Clear previous answers
 
-    for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
+  for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
         const answerElement = createAnswerElement(key, answerText);
         answerElement.addEventListener('click', () => selectAnswer(key, answerElement));
         answersListElement.appendChild(answerElement);
     }
-
+    
     document.getElementById(NEXT_QUESTION_BUTTON_ID).addEventListener('click', nextQuestion);
 
     document.getElementById(SKIP_QUESTION_BUTTON_ID).addEventListener('click', skipQuestion);
@@ -92,6 +82,7 @@ const selectAnswer = (key, answerElement) => {
     if (key === currentQuestion.correct) {
         answerElement.style.backgroundColor = 'green';
         score++;
+        updateScoreDisplay()
         displayHappyCat();
     } else {
         answerElement.style.backgroundColor = 'red';
@@ -113,11 +104,13 @@ const selectAnswer = (key, answerElement) => {
 };
 
 const nextQuestion = () => {
+    
     quizData.currentQuestionIndex++;
     localStorage.setItem('questionIndex', quizData.currentQuestionIndex);
     localStorage.setItem('score', score);
 
     initQuestionPage(quizData.currentQuestionIndex);
+    removeCat()
 };
 
 const nextButtonSwitcher = () => {
@@ -138,7 +131,7 @@ const displayHappyCat = () => {
 
     setTimeout(() => {
         happyCatImg.remove();
-    }, 2000);
+    }, 3000);
 };
 
 const displayUnhappyCat = () => {
@@ -150,5 +143,43 @@ const displayUnhappyCat = () => {
 
     setTimeout(() => {
         unhappyCatImg.remove();
-    }, 2000);
+    }, 3000);
+};
+const createScoreContainer = () => {
+    const scoreContainer = document.createElement('div');
+    scoreContainer.classList.add('score-container');
+
+    const scoreElement = document.createElement('div');
+    scoreElement.classList.add('score');
+    scoreElement.textContent = `Your Score is: ${score}`;
+    scoreContainer.appendChild(scoreElement);
+    return scoreContainer;
+};
+const createIndexContainer = () => {
+    const indexContainer = document.createElement('div');
+    indexContainer.classList.add('indexContainer');
+    const questionElements = document.createElement('div');
+    questionElements.classList.add('index');
+    questionElements.textContent = ` Question : ${quizData.currentQuestionIndex + 1}`;
+    indexContainer.appendChild(questionElements);
+    return indexContainer;
+};
+const updateScoreDisplay = () => {
+    const scoreElement = document.querySelector('.score');
+    if (scoreElement) {
+        scoreElement.textContent = `Your Score is: ${score}`;
+        scoreElement.classList.add('score-enlarged');
+        setTimeout(() => {
+            scoreElement.classList.remove('score-enlarged');
+        }, 1000); // Duration should match the CSS transition duration
+    }
+};
+const removeCat = () => {
+    const happyCatImg = document.querySelector('.show-happy-cat');
+    const unHappyCatImg = document.querySelector('.show-unhappy-cat');
+    
+    if (happyCatImg|| unHappyCatImg) {
+        happyCatImg.remove();
+        unHappyCatImg.remove()
+    }
 };
